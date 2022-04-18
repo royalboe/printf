@@ -50,11 +50,11 @@ int print_percent(va_list args)
 }
 
 /**
- * print_d - prints a decimal
+ * print_int - prints a decimal
  * @args: decimal argument
  * Return: counter
  */
-int print_d(va_list args)
+int print_int(va_list args)
 {
 
 	unsigned int absolute, aux, countnum, count;
@@ -64,8 +64,9 @@ int print_d(va_list args)
 	n = va_arg(args, int);
 		if (n < 0)
 		{
-			absolute = (n * -1);
-			count += _putchar('-');
+			absolute = n * -1;
+			_putchar('-');
+			count++;
 		}
 		else
 			absolute = n;
@@ -92,5 +93,5 @@ int print_d(va_list args)
 
 int print_i(va_list args)
 {
-	return (print_d(args));
+	return (print_int(args));
 }
