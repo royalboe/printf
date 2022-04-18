@@ -1,111 +1,100 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
-#include <stdint.h>
-
 /**
- *_printstring - function that print a string
- *@s: pointer to value of each simbol of string
- *Return: counter.
+ * print_c - prints character
+ * @args: character argument
+ * Return: number of characters
  */
-int _printstring(char *s)
+int print_c(va_list args)
 {
-	int i = 0;
+	int c;
 
-	while (*s != '\0')
+	c = va_arg(args, int);
+	return (_putchar(c));
+}
+/**
+ * print_s - prints a string
+ * @args: string  argument
+ * Return: number of characters
+ */
+int print_s(va_list args)
+{
+	int i, count = 0;
+	char *str;
+
+	i = 0;
+	str = va_arg(args, char*);
+	if (str == NULL)
+		str = "(null)";
+	while (str[i] != '\0')
 	{
-		_putchar(*s);
-		s++;
+		_putchar(str[i]);
 		i++;
-	}
-	return (i);
-}
-
-/**
- * print_unsig - print unsigned numbers
- * @n: number to print
- * Return: @count, number or chars printed.
- */
-int print_unsig(unsigned int n)
-{
-	int count = 0;
-	unsigned int num_copy = n;
-
-	if (n == 0)
-		count = 1;
-	while (num_copy != 0)
-	{
-		num_copy = num_copy / 10;
-		count++;
-	}
-	if (n >= 10)
-		print_unsig(n / 10);
-	_putchar (n % 10 + '0');
-	return (count);
-}
-
-/**
- * print_number - printing numbers with putchar (Thanks Daniel "El profe")
- * @n: number to print
- * Return: no return.
- */
-int print_number(int n)
-{
-	unsigned int a, b, c, d, f;
-	int count = 0;
-
-	if (n < 0)
-	{
-		_putchar('-');
-		n = n * -1;
-		count++;
-	}
-	b = n;
-	c = 1;
-	for (a = 1 ; b > 9 ; a++)
-	{
-		b = b / 10;
-		c = c * 10;
-	}
-	for (f = 1; f <= a; f++)
-	{
-		d = n / c;
-		n = n % c;
-		c = c / 10;
-		_putchar(d + '0');
 		count++;
 	}
 	return (count);
 }
+/**
+ * print_percent - pass the percent sing
+ * @args: string  argument
+ * Return: return the percent sing
+ *
+ */
+int print_percent(va_list args)
+{
+	char *str;
+
+	str = "%";
+	if (va_arg(args, int) == *str)
+	{
+		return (*str);
+	}
+	return (*str);
+}
 
 /**
- * print_hl - convert unsigned int in hexadecimal
- *@n: unsigned int
- * Return: numer times print
+ * print_d - prints a decimal
+ * @args: decimal argument
+ * Return: counter
  */
-int print_hl(uintptr_t n)
+int print_d(va_list args)
 {
-	uintptr_t quotient, temp;
 
-	int cont = 1, cont2;
-	char hexadecimalNumber[100];
-	int count = 0;
+	unsigned int absolute, aux, countnum, count;
+	int n;
 
-	quotient = n;
-	while (quotient != 0)
-	{
-		temp = quotient % 16;
-
-		if (temp < 10)
-			temp = temp + 48;
+	count = 0;
+	n = va_arg(args, int);
+		if (n < 0)
+		{
+			absolute = (n * -1);
+			count += _putchar('-');
+		}
 		else
-			temp = temp + 87;
+			absolute = n;
 
-		hexadecimalNumber[cont++] = temp;
-		quotient = quotient / 16;
+	aux = absolute;
+	countnum = 1;
+	while (aux > 9)
+	{
+		aux /= 10;
+		countnum *= 10;
 	}
-	for (cont2 = cont - 1 ; cont2 > 0; cont2--, count++)
-		_putchar(hexadecimalNumber[cont2]);
-
+	while (countnum >= 1)
+	{
+		count += _putchar(((absolute / countnum) % 10) + '0');
+		countnum /= 10;
+	}
 	return (count);
+}
+/**
+ * print_i - prints integer
+ * @args: integer argument
+ * Return: the decimal function
+ */
+
+int print_i(va_list args)
+{
+	return (print_d(args));
 }
