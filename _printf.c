@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "main.h"
 #include <stddef.h>
+#include <stdint.h>
 /**
  * _printf - recreates the printf function
  * @format: string with format specifier
