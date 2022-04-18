@@ -1,3 +1,8 @@
+#include "main.h"
+#include <stdarg.h>
+#include <stdint.h>
+#include <stdio.h>
+
 /**
  * _withformat4 - prints depending the format
  * @c: the format sent by the main
