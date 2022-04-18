@@ -1,97 +1,56 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
-/**
- * print_c - prints character
- * @args: character argument
- * Return: number of characters
- */
-int print_c(va_list args)
-{
-	int c;
 
-	c = va_arg(args, int);
-	return (_putchar(c));
-}
 /**
- * print_string - a function that prints a string
- * @str: string  argument
- * Return: number of characters
+ *_printstring - function that print a string
+ *@s: pointer to value of each simbol of string
+ *Return: counter.
  */
-int print_string(char *str)
+int _printstring(char *s)
 {
-	int count = 0;
-	
-	while (*str != '\0')
+	int i = 0;
+
+	while (*s != '\0')
 	{
-		_putchar(*str);
-		str++;
+		_putchar(*s);
+		s++;
+		i++;
+	}
+	return (i);
+}
+
+
+/**
+ * print_number - printing numbers with putchar (Thanks Daniel "El profe")
+ * @n: number to print
+ * Return: no return.
+ */
+int print_number(int n)
+{
+	unsigned int a, b, c, d, f;
+	int count = 0;
+
+	if (n < 0)
+	{
+		_putchar('-');
+		n = n * -1;
+		count++;
+	}
+	b = n;
+	c = 1;
+	for (a = 1 ; b > 9 ; a++)
+	{
+		b = b / 10;
+		c = c * 10;
+	}
+	for (f = 1; f <= a; f++)
+	{
+		d = n / c;
+		n = n % c;
+		c = c / 10;
+		_putchar(d + '0');
 		count++;
 	}
 	return (count);
-}
-
-/**
- * print_percent - pass the percent sing
- * @args: string  argument
- * Return: return the percent sing
- *
- */
-int print_percent(va_list args)
-{
-	char *str;
-
-	str = "%";
-	if (va_arg(args, int) == *str)
-	{
-		return (*str);
-	}
-	return (*str);
-}
-
-/**
- * print_int - prints a decimal
- * @args: decimal argument
- * Return: counter
- */
-int print_int(va_list args)
-{
-
-	unsigned int absolute, aux, countnum, count;
-	int n;
-
-	count = 0;
-	n = va_arg(args, int);
-		if (n < 0)
-		{
-			absolute = n * -1;
-			_putchar('-');
-			count++;
-		}
-		else
-			absolute = n;
-
-	aux = absolute;
-	countnum = 1;
-	while (aux > 9)
-	{
-		aux /= 10;
-		countnum *= 10;
-	}
-	while (countnum >= 1)
-	{
-		count += _putchar(((absolute / countnum) % 10) + '0');
-		countnum /= 10;
-	}
-	return (count);
-}
-/**
- * print_i - prints integer
- * @args: integer argument
- * Return: the decimal function
- */
-
-int print_i(va_list args)
-{
-	return (print_int(args));
 }
