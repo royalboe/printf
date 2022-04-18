@@ -1,10 +1,11 @@
 #include <unistd.h>
-#include "main.h"
-
 /**
- * _putchar - Fuction that prints to the std output
- * @c: char to print
- * Return: the char printed
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, amd errno is set appropriately.
+=======
  */
 int _putchar(char c)
 {

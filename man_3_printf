@@ -128,4 +128,4 @@ printf(1), printf(3)
 No known bugs, but this function maybe have bugs using the conversion specifiers o, u, x, X, if you find some bug
 let us know :).
 .SH AUTHOR
-Norris Selorm Bedzo, Francis Kwofie.
+Ajayi Deborah, Salami Ayomide

@@ -1,10 +1,9 @@
-#ifndef MAIN_H
-#define MAIN_H
-
+#ifndef our_printf
+#define our_printf
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdarg.h>
 #include <stdint.h>
-
+#include <stdlib.h>
 
 int _putchar(char c);
 int print_number(int n);
@@ -18,6 +17,8 @@ int _printstring(char *s);
 int rot13(char *point);
 int print_rev(char *);
 int print_hl(uintptr_t n);
-
-
+int _withformat4(char c, int count, va_list valist);
+int _withformat3(char c, int count, va_list valist);
+int _withformat2(char c, int count, va_list valist);
+int _withformat(char c, int count, va_list valist);
 #endif
