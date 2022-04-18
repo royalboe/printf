@@ -7,23 +7,23 @@
  */
 int print_octal(unsigned int n)
 {
-	unsigned int u, o, x, X, l, h;
+	unsigned int a, b, c, d, f;
 	int count = 0;
 
-	o = n;
-	x = 1;
-	for (u = 1 ; o > 7 ; u++)
+	b = n;
+	c = 1;
+	for (a = 1 ; b > 7 ; a++)
 	{
-		o = o / 8;
-		x = x * 8;
+		b = b / 8;
+		c = c * 8;
 		count++;
 	}
-	for (h = 1; h <= a; h++)
+	for (f = 1; f <= a; f++)
 	{
-		X = n / x;
-		n = n % x;
-		x = x / 8;
-		_putchar(X + '0');
+		d = n / c;
+		n = n % c;
+		c = c / 8;
+		_putchar(d + '0');
 		count++;
 	}
 	return (count);
