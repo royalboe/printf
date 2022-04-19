@@ -27,8 +27,7 @@ int get_print(const char *format, print_type argument[], va_list ap)
 			if (*argument[j].parameter == format[i + 1])
 			{
 				count += argument[j].f(ap);
-				break;
-				
+				break;	
 			}
 		}
 		i++;
