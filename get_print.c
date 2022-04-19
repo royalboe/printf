@@ -28,6 +28,7 @@ int get_print(const char *format, print_type argument[], va_list ap)
 			{
 				count += argument[j].f(ap);
 				break;
+				
 			}
 		}
 		i++;
