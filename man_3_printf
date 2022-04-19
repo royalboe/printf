@@ -1,0 +1,117 @@
+.TH _printf 3 "April 2022" "GNU" "_Printf Man Page"
+.SH NAME
+.B _printf
+- A custom made function that replicates what printf in the standard library does in the simplest of ways. Excluding certain format specifiers like %o, and %x.
+.SH SYNOPSIS
+#include "main.h"
+.PP
+int printf(const char *format, ...);
+.SH DESCRIPTION
+In the C programming language, the printf() function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen.
+.PP
+Our custom made _printf() function replicates exactly how the actual printf() function works. Using variadic functions as a parameter and then returning the number of charcters printed (excluding the null byte used to end output to strings). Where the format (parameter) is a character string. The format string is composed of zero or more directives.
+.PP
+However, our simple _printf only uses 12 format specifiers (%c, %s, %i, %d, %%, %r, %R, %b, %u, %o, %x %X).
+.PP
+Our _printf replicates actual printf() function's %d format specifier to display the value of an integer variable.
+.PP
+Similarly %c is used to display character, %s for string variable. If updated later on then, %lf for double and %x for hexadecimal variable.
+.PP
+To generate a newline, we use the newline character in C in our _printf() statement.
+.SH Return
+Upon successful return, the function (_printf) returns the number of characters printed (excluding the  null byte used to end output to strings). In other words, the custom made function returns -1 upon error and (null) if a string argument is NULL.
+.SH Format
+The format string is a character string, beginning and ending in its initial shift state, if any.
+.PP
+The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output; and conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character %, and ends with a conversion specifier. Suchar %c, and %s.
+.SH Format Specifiers
+.I %c
+.IP
+The %c format specifier is used to print out a single character.
+.PP
+.I %s
+.IP
+The %s format specifier is used to print out a desired string of chracters.
+.PP
+.I %i
+.IP
+The %i format specifier is used to display the value of an integer variable.
+.PP
+.I %d
+.IP
+The %d format specifier is also used to display the value of an integer variable.
+.PP
+.I %%
+.IP
+A '%' is written. No argument is converted. The complete conversion specification is '%%'.
+.PP
+.I %r
+.IP
+The %r format specifier is used to print a reverse string.
+.PP
+.I %R
+.IP
+The %R format specifier is used to print the string in Rot13.
+.PP
+.I %b
+.IP
+The %b format specifier is used to print the binary form of an integer.
+.PP
+.I %u
+.IP
+The %u format specifier is used to print an unsigned integer.
+.PP
+.I %o
+.IP
+The %o format specifier is used to print an ocatal number.
+.PP
+.I %x
+.IP
+The %x format specifier is used to print the lower case hexidecimal number.
+.PP
+.I %X
+.IP
+The %X format specifier is used to print the upper case hexidecimal number.
+.SH BUGS
+Custom _printf() doesn’t reproduce the buffer handling of the C library printf function.
+.PP
+Custom _printf() doesn’t handle the flag characters.
+.PP
+Custom _printf() doesn’t handle field width.
+.PP
+Custom _printf() doesn’t handle precision.
+.PP
+Custom _printf() doesn’t handle the length modifiers.
+.SH Example
+#include <limits.h>
+.PP
+#include <stdio.h>
+.PP
+#include "main.h"
+.PP
+.PP
+int main(void)
+.PP
+{
+.IP
+int len;
+.IP
+int len2;
+.IP
+_printf("Length:[%d, %i]\n", len, len);
+.IP
+_printf("Negative:[%d]\n", -762534);
+.IP
+_printf("Character:[%c]\n", 'H');
+.IP
+_printf("String:[%s]\n", "I am a string !");
+.IP
+len = _printf("Percent:[%%]\n");
+.IP
+return (0);
+.PP
+}
+.SH Notes
+All files and code used to create _printf were created and compiled on Ubuntu 14.04.4 LTS using GCC 4.8.4
+.SH SEE ALSO
+man 3 printf, printf(1)
