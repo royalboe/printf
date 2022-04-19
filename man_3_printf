@@ -111,6 +111,7 @@ len = _printf("Percent:[%%]\n");
 return (0);
 .PP
 }
+
 .SH Notes
 All files and code used to create _printf were created and compiled on Ubuntu 20.04.4 LTS using GCC 4.8.4
 .SH SEE ALSO
