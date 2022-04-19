@@ -7,7 +7,6 @@
  *
  * Return: the convertednumber of a certain base
  */
-
 char *convert(unsigned int num, int base)
 {
 	const char Representation[] = "0123456789ABCDEF";
