@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _print_binary - function that prints a binary number from int
  * @ap: the action pointer
