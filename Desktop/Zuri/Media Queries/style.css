@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=poppins:wght@400;500;600;700;&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+.free-trial {
+    padding: 20px 0px;
+    padding-bottom: 6%;
+}
+
+body {
+    background-image: url(./bg-intro-desktop.png);
+    background-position: center;
+    background-color: hsl(0, 100%, 74%);
+    font-family: 'Sen', sans-serif;
+    font-size: 1.3rem;
+    overflow-x: hidden;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-height: 100vh;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+} 
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*flex-wrap: wrap;*/
+}
+.text-box {
+    padding-right: 50px;
+    width: 100%; 
+} 
+
+.text-box p {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+.text-box h1 {
+    color: white;
+    padding-bottom: 20px;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.text-box i {
+    color: red;
+    border-image-source: none;
+    background-image: url(./icon-error.svg);
+
+}
+
+span {
+    font-weight: bolder;
+    
+}
+
+.text-box {
+    width: 40%;
+}
+
+.try {
+    width: 40%;
+}
+
+.border-radius {
+    width: 100%;
+    border-radius: 8px;
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    box-shadow: 10px 10px 8px rgb(121, 105, 105);
+    margin: 20px;
+}
+
+.border-box {
+    padding-top: 40px;
+}
+
+.border-box p {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    box-shadow: 5px 5px 4px rgb(121, 105, 105);
+    margin: 20px;
+    background-color: hsl(248, 32%, 49%);
+    color: white;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    outline: hsl(0, 100%, 74%);
+    border-color: hsl(0, 100%, 74%);
+
+}
+
+input:hover {
+    border-color: grey;
+    border-radius: 5px;
+    .border-radius
+}
+
+.input-box {
+    line-height: 70px;
+}
+
+.input-box p {
+    color: azure;
+}
+
+
+input[type='submit'] {
+    margin-bottom: 3rem;
+    background-color: #34a493;
+    color: var(--white);
+    font-weight: bold;
+    height: 5rem;
+    border-radius: 1rem 1rem 1rem 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+    border-color: #3cb371;
+}
+
+.form action.input-box {
+    border-color: var(red);
+}
+
+.input-box.error i,
+.input-box.error small {
+    visibility: visible;
+    border-color: var(red);
+}
+
+.input-box.success input {
+    border-color: var(green);
+}
+
+a {
+    text-decoration: none;
+    color: var(red);
+}
+
+button {
+    padding: 15px;
+    width: 100%;
+    background-color: hsl(154, 59%, 51%);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
+button:hover {
+    background-color: #3cb371;
+    border: 1px white solid;
+    box-shadow: var(--green) 0px 2px;
+}
+
+form p {
+    text-align: center;
+    flood-color: beige;
+}
+
+.terms span {
+    color: hsl(0, 100%, 74%);
+}
+
+.terms {
+    font-size: 0.6rem;
+    color: var(--greyish-blue);
+    margin-top: 10px;
+}
+
+@media (max-width : 992px) {
+    body {
+        background-image: url(./bg-intro-mobile-12.png);
+        background-position: center;
+        background-size: cover;
+        background-color: hsl(0, 100%, 74%);
+        text-align: center;
+        margin: 20% 10%;
+    }
+
+    main {
+        height: auto;
+        display: block;
+
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .flex-box {
+        flex-direction: column;
+        justify-content: space-between;
+    } 
+
+    .text-box {
+        padding-right: 0;
+        margin-bottom: 5rem;
+    } 
+
+    .login {
+        width: 100%;
+    }
+
+
+    form {
+        padding: 20px;
+    }
+
+
+}
